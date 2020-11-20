@@ -1,13 +1,16 @@
-import express, { Application, RequestHandler, Response } from 'express';
+import express, { Application } from 'express';
 import { dbConnection } from './database/config';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import { router } from './routes';
+import { DecToken } from './middleware/verify.token';
+import { TokenPayload } from 'google-auth-library';
 
 declare global {
   namespace Express {
     interface Request {
-      user?: string | object;
+      user?: object | DecToken;
+      payload?: TokenPayload;
     }
   }
 }
@@ -23,8 +26,7 @@ dbConnection();
 const PORT = process.env.PORT || 3001;
 
 app.use(cors());
-app.use(express.json());
-
+app.use(express.static('public'));
 // Routes index
 app.use('/api', router);
 

@@ -4,10 +4,12 @@ import { genSalt, hash } from 'bcryptjs';
 
 export const getAll: RequestHandler = async (req, res): Promise<Response> => {
   try {
-    const users = await User.find().select('-password');
-    console.log(req.user);
-
-    return res.status(200).json({ success: true, users });
+    const { from = 0, pageSize = 0 } = req.query;
+    const [ result, total ] = await Promise.all([
+      User.find().select('-password').skip(+from).limit(+pageSize),
+      User.countDocuments(),
+    ]);
+    return res.status(200).json({ success: true, result, total });
   } catch (error) {
     throw new Error(error);
   }

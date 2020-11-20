@@ -1,14 +1,5 @@
 import { Schema, model } from 'mongoose';
 
-interface User {
-  name: string;
-  email: string;
-  password: string;
-  img: string;
-  role: string;
-  google: boolean;
-}
-
 const UserSchema: Schema = new Schema({
   name: {
     type: String,

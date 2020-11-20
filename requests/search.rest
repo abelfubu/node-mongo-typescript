@@ -1,0 +1,9 @@
+@url = http://localhost:3000/api/search
+
+GET {{url}}/missuri
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjU0YjA3NmRjNDNmMzBhYzJjZDFmNSIsImlhdCI6MTYwNTczNjc3NCwiZXhwIjoxNjA1ODIzMTc0fQ.Zr9rY_jNm4y6Hb2AewwCIgzosqvwZVfSnzuP-Gq0U-8
+###
+
+GET {{url}}/collection/user/fer
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjU0YjA3NmRjNDNmMzBhYzJjZDFmNSIsImlhdCI6MTYwNTczNjc3NCwiZXhwIjoxNjA1ODIzMTc0fQ.Zr9rY_jNm4y6Hb2AewwCIgzosqvwZVfSnzuP-Gq0U-8
+###

@@ -2,6 +2,7 @@ import { Router } from 'express';
 import { check } from 'express-validator';
 import * as controller from '../controllers/auth.controllers';
 import { fieldValidator } from '../middleware/field.validator';
+import { googleVerify } from '../middleware/googleAuth';
 
 export const router = Router();
 
@@ -11,4 +12,6 @@ const validators = [
   fieldValidator,
 ];
 
-router.post('/login', validators, controller.login);
+router
+  .post('/login', validators, controller.login)
+  .post('/login/google', googleVerify, controller.loginGoogle);

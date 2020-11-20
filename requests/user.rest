@@ -1,14 +1,14 @@
-@url = http://localhost:3000/api/user/
+@url = http://localhost:3000/api/users
 
-GET {{url}}
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjU0YjA3NmRjNDNmMzBhYzJjZDFmNSIsImlhdCI6MTYwNTczNjc3NCwiZXhwIjoxNjA1ODIzMTc0fQ.Zr9rY_jNm4y6Hb2AewwCIgzosqvwZVfSnzuP-Gq0U-8
+GET {{url}}?from=0&pageSize=0
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjMwNTU3ZDg1OGE2NDE5NGQ5ODQ5MCIsImlhdCI6MTYwNTkwMTgyNiwiZXhwIjoxNjA1OTg4MjI2fQ.AsTiJ4k4RFrAKsUh7WJugBNY8_CNy-MhkIuc_Efxv4s
 ###
 POST {{url}}
 Content-Type: application/json
 
 {
-  "name":"Fernando",
-  "email": "fernando3@gmail.com",
+  "name":"test15",
+  "email": "test15@gmail.com",
   "password": 123456
 }
 
@@ -16,14 +16,15 @@ Content-Type: application/json
 GET {{url}}5fb2eedd6403a347c0f5d4d8
 
 ###
-DELETE {{url}}5fb54a9d9316a33360bd3014
+DELETE {{url}}/5fb3f3c99e12af09b0069678
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmYjMwNTU3ZDg1OGE2NDE5NGQ5ODQ5MCIsImlhdCI6MTYwNTkwMTgyNiwiZXhwIjoxNjA1OTg4MjI2fQ.AsTiJ4k4RFrAKsUh7WJugBNY8_CNy-MhkIuc_Efxv4s
 
 ###
 PATCH {{url}}5fb30557d858a64194d98490
 Content-Type: application/json
 
 {
-  "name": "Abelardino",
-  "email": "abelfubu@gmail.com",
-  "password": "1456"
+  "name": "test1",
+  "email": "test1@gmail.com",
+  "password": "123456"
 }
