@@ -3,6 +3,7 @@ import { compare } from 'bcryptjs';
 import { User } from '../models/user';
 import { createToken } from '../utils/jwt';
 import { ServerResponse } from '../models/ServerResponse';
+import { DecToken } from '../middleware/verify.token';
 
 export const login: RequestHandler = async (req, res): Promise<Response> => {
   try {
@@ -36,4 +37,9 @@ export const loginGoogle: RequestHandler = async (req, res) => {
     console.log(error);
     return res.status(500).json(new ServerResponse(false));
   }
+};
+
+export const refresh: RequestHandler = async (req, res) => {
+  const token = await createToken((req.user as DecToken).id);
+  res.status(200).json({ success: true, token });
 };
